@@ -11,12 +11,14 @@ y su tamaño, y devuelva el valor más grande del arreglo.
 */
 int findMax(int arr[], int size) 
 {
-    int maximo = arr[0]; 
+  // Crear la variable maximo y asignarle el primer valor del arreglo  
+  int maximo = arr[0]; 
 
-    for (int i = 1; i < size; i++)
-      if (arr[i] > maximo) 
-        maximo = arr[i];
-    return maximo;
+  for (int i = 1; i < size; i++)
+    if (arr[i] > maximo)
+      // Cada vez que se encuentre un valor mayor al "maximo", se actualiza la             variable maximo 
+      maximo = arr[i];
+  return maximo;
 } 
 
 /*
@@ -49,33 +51,33 @@ los números pares del arreglo original.
 */
 int *filterEvenNumbers(int arr[], int size, int *newSize) 
 {
-    // Contar la cantidad de números pares en el arreglo original
-    int count = 0;
-    for (int i = 0; i < size; i++) {
-        if (arr[i] % 2 == 0) {
-            count++;
-        }
-    }
+  // Contar la cantidad de números pares en el arreglo original
+  int count = 0;
+  for (int i = 0; i < size; i++) {
+      if (arr[i] % 2 == 0) {
+          count++;
+      }
+  }
 
-    // Crear un nuevo arreglo para almacenar los números pares
-    int *result = (int *)malloc(count * sizeof(int));
-    if (result == NULL) {
-        perror("Error al asignar memoria");
-        exit(EXIT_FAILURE);
-    }
+  // Crear un nuevo arreglo para almacenar los números pares
+  int *result = (int *)malloc(count * sizeof(int));
+  if (result == NULL) {
+      printf("Error al asignar memoria");
+      exit(EXIT_FAILURE);
+  }
 
-    // Copiar los números pares al nuevo arreglo
-    int j = 0;
-    for (int i = 0; i < size; i++) {
-        if (arr[i] % 2 == 0) {
-            result[j] = arr[i];
-            j++;
-        }
-    }
+  // Copiar los números pares al nuevo arreglo
+  int j = 0;
+  for (int i = 0; i < size; i++) {
+      if (arr[i] % 2 == 0) {
+          result[j] = arr[i];
+          j++;
+      }
+  }
 
-    *newSize = count; // Actualizar el valor de newSize
+  *newSize = count; // Actualizar el valor de newSize
 
-    return result;
+  return result;
 }
 
 
