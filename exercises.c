@@ -29,14 +29,16 @@ void reverseArray(int arr[], int size)
   int inicio = 0;
   int fin = size - 1;
 
-  while (inicio < fin) {
-  // Intercambiamos los elementos en las posiciones inicio y fin
+  while (inicio < fin) 
+  {
     int temp = arr[inicio];
     arr[inicio] = arr[fin];
     arr[fin] = temp;
 
     inicio++;
     fin--;
+  }
+  return; 
 }
 
 /*
