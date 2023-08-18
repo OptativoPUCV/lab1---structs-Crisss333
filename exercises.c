@@ -238,8 +238,8 @@ Nodo *crearListaEnlazada(int arr[], int size)
       tail->siguiente = nuevoNodo;
       tail = nuevoNodo;
     }
-    return head;
   }
+  return head;
 }
 
 
