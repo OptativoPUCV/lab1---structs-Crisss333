@@ -202,40 +202,40 @@ typedef struct nodo {
   struct nodo *siguiente; // puntero al siguiente nodo
 } Nodo;
 
-Nodo *crearListaEnlazada(int arr[], int size)
-{
-  Nodo *head = NULL; // Puntero al primer nodo de la lista
-  Nodo *tail = NULL; // Puntero al último nodo de la lista
+Nodo *crearListaEnlazada(int arr[], int size){
+    Nodo *head = NULL; // Puntero al primer nodo de la lista
+    Nodo *tail = NULL; // Puntero al último nodo de la lista
 
-  for (int i = 0; i < size; i++) 
-  {
-    // Crear un nuevo nodo
-    Nodo *nuevoNodo = (Nodo *)malloc(sizeof(Nodo));
-    if (nuevoNodo == NULL) 
-      printf("Error al asignar memoria para el nodo");
-      
-    while (head != NULL)
-    {
-      Nodo *temp = head;
-      head = head->siguiente;
-      free(temp);
+    for (int i = 0; i < size; i++) {
+        // Crear un nuevo nodo
+        Nodo *nuevoNodo = (Nodo *)malloc(sizeof(Nodo));
+        if (nuevoNodo == NULL) {
+            // Manejo de error si la asignación de memoria falla
+            perror("Error al asignar memoria para el nodo");
+            // Liberar la memoria de los nodos anteriores si es necesario
+            while (head != NULL) {
+                Nodo *temp = head;
+                head = head->siguiente;
+                free(temp);
+            }
+            return NULL;
+        }
+
+        // Inicializar el nuevo nodo
+        nuevoNodo->numero = arr[i];
+        nuevoNodo->siguiente = NULL;
+
+        // Enlazar el nuevo nodo al final de la lista
+        if (head == NULL) {
+            head = nuevoNodo;
+            tail = nuevoNodo;
+        } else {
+            tail->siguiente = nuevoNodo;
+            tail = nuevoNodo;
+        }
     }
-    return NULL;
-  }
-  // Inicializar el nuevo nodo
-  nuevoNodo->numero = arr[i];
-  nuevoNodo->siguiente = NULL;
 
-  // Enlazar el nuevo nodo al final de la lista
-  if (head == NULL) 
-  {
-    head = nuevoNodo;
-    tail = nuevoNodo;
-  } else 
-  {
-    tail->siguiente = nuevoNodo;
-    tail = nuevoNodo;
-  }
-  return head;
+    return head;
 }
+
 
