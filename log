@@ -93,3 +93,32 @@ exercises.c:226:27: error: ‘i’ undeclared (first use in this function)
       |                           ^
 Compilation failed
 730072d
+Fri 18 Aug 2023 11:11:18 PM UTC: 
+ exercises.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:1:
+exercises.c: In function ‘crearListaEnlazada’:
+exercises.c:227:12: error: invalid type argument of ‘->’ (have ‘Nodo’ {aka ‘struct nodo’})
+  227 |   nuevoNodo->numero = arr[i];
+      |            ^~
+exercises.c:227:27: error: ‘i’ undeclared (first use in this function)
+  227 |   nuevoNodo->numero = arr[i];
+      |                           ^
+exercises.c:227:27: note: each undeclared identifier is reported only once for each function it appears in
+exercises.c:228:12: error: invalid type argument of ‘->’ (have ‘Nodo’ {aka ‘struct nodo’})
+  228 |   nuevoNodo->siguiente = NULL;
+      |            ^~
+exercises.c:233:12: error: incompatible types when assigning to type ‘Nodo *’ {aka ‘struct nodo *’} from type ‘Nodo’ {aka ‘struct nodo’}
+  233 |     head = nuevoNodo;
+      |            ^~~~~~~~~
+exercises.c:234:12: error: incompatible types when assigning to type ‘Nodo *’ {aka ‘struct nodo *’} from type ‘Nodo’ {aka ‘struct nodo’}
+  234 |     tail = nuevoNodo;
+      |            ^~~~~~~~~
+exercises.c:237:23: error: incompatible types when assigning to type ‘struct nodo *’ from type ‘Nodo’ {aka ‘struct nodo’}
+  237 |     tail->siguiente = nuevoNodo;
+      |                       ^~~~~~~~~
+exercises.c:238:12: error: incompatible types when assigning to type ‘Nodo *’ {aka ‘struct nodo *’} from type ‘Nodo’ {aka ‘struct nodo’}
+  238 |     tail = nuevoNodo;
+      |            ^~~~~~~~~
+Compilation failed
+cf385ee
