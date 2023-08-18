@@ -211,7 +211,7 @@ Nodo *crearListaEnlazada(int arr[], int size){
         Nodo *nuevoNodo = (Nodo *)malloc(sizeof(Nodo));
         if (nuevoNodo == NULL) {
             // Manejo de error si la asignación de memoria falla
-            perror("Error al asignar memoria para el nodo");
+            printf("Error al asignar memoria para el nodo");
             // Liberar la memoria de los nodos anteriores si es necesario
             while (head != NULL) {
                 Nodo *temp = head;
