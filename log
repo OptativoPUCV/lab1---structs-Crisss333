@@ -148,3 +148,17 @@ Fri 18 Aug 2023 11:14:03 PM UTC:
  tests:  0|0
 total_score: 70/70
 869b936
+Fri 18 Aug 2023 11:16:21 PM UTC: 
+ exercises.c | 25 ++++++++++++++-----------
+ 1 file changed, 14 insertions(+), 11 deletions(-)
+In file included from test.c:1:
+exercises.c: In function ‘crearListaEnlazada’:
+exercises.c:228:3: error: ‘nuevoNodo’ undeclared (first use in this function)
+  228 |   nuevoNodo->numero = arr[i];
+      |   ^~~~~~~~~
+exercises.c:228:3: note: each undeclared identifier is reported only once for each function it appears in
+exercises.c:228:27: error: ‘i’ undeclared (first use in this function)
+  228 |   nuevoNodo->numero = arr[i];
+      |                           ^
+Compilation failed
+0ca3702
