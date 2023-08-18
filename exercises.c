@@ -91,32 +91,37 @@ void mergeSortedArrays(int arr1[], int size1, int arr2[], int size2,
 {
   int i = 0, j = 0, k = 0;
 
-    // Recorre ambos arreglos y compara los elementos para fusionarlos en 'result'
-    while (i < size1 && j < size2) {
-        if (arr1[i] < arr2[j]) {
-            result[k] = arr1[i];
-            i++;
-        } else {
-            result[k] = arr2[j];
-            j++;
-        }
-        k++;
+  // Recorre ambos arreglos y compara los elementos para fusionarlos en 'result'
+  while (i < size1 && j < size2) 
+  {
+    if (arr1[i] < arr2[j]) 
+    {
+      result[k] = arr1[i];
+      i++;
+    } 
+    else 
+    {
+      result[k] = arr2[j];
+      j++;
     }
+    k++;
+  }
 
-    // Si quedan elementos en 'arr1', agrégalos a 'result'
-    while (i < size1) {
-        result[k] = arr1[i];
-        i++;
-        k++;
-    }
+  // Si quedan elementos en 'arr1', agrégalos a 'result'
+  while (i < size1) 
+  {
+    result[k] = arr1[i];
+    i++;
+    k++;
+  }
 
-    // Si quedan elementos en 'arr2', agrégalos a 'result'
-    while (j < size2) {
-        result[k] = arr2[j];
-        j++;
-        k++;
-    }
-}
+  // Si quedan elementos en 'arr2', agrégalos a 'result'
+  while (j < size2) 
+  {
+    result[k] = arr2[j];
+    j++;
+    k++;
+  }
 }
 
 /*
