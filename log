@@ -122,3 +122,17 @@ exercises.c:238:12: error: incompatible types when assigning to type ‘Nodo *�
       |            ^~~~~~~~~
 Compilation failed
 cf385ee
+Fri 18 Aug 2023 11:11:32 PM UTC: 
+ exercises.c | 1 -
+ 1 file changed, 1 deletion(-)
+In file included from test.c:1:
+exercises.c: In function ‘crearListaEnlazada’:
+exercises.c:226:3: error: ‘nuevoNodo’ undeclared (first use in this function)
+  226 |   nuevoNodo->numero = arr[i];
+      |   ^~~~~~~~~
+exercises.c:226:3: note: each undeclared identifier is reported only once for each function it appears in
+exercises.c:226:27: error: ‘i’ undeclared (first use in this function)
+  226 |   nuevoNodo->numero = arr[i];
+      |                           ^
+Compilation failed
+78f1bba
