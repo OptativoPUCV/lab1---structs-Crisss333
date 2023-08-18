@@ -162,3 +162,14 @@ exercises.c:228:27: error: ‘i’ undeclared (first use in this function)
       |                           ^
 Compilation failed
 0ca3702
+Fri 18 Aug 2023 11:17:27 PM UTC: 
+ exercises.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+In file included from test.c:1:
+exercises.c: In function ‘crearListaEnlazada’:
+exercises.c:243:1: error: control reaches end of non-void function [-Werror=return-type]
+  243 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+6d0ef27

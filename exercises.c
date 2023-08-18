@@ -223,22 +223,23 @@ Nodo *crearListaEnlazada(int arr[], int size)
       }
       return NULL;
     }
+  
+    // Inicializar el nuevo nodo
+    nuevoNodo->numero = arr[i];
+    nuevoNodo->siguiente = NULL;
+  
+    // Enlazar el nuevo nodo al final de la lista
+    if (head == NULL) 
+    {
+      head = nuevoNodo;
+      tail = nuevoNodo;
+    } else 
+    {
+      tail->siguiente = nuevoNodo;
+      tail = nuevoNodo;
+    }
+    return head;
   }
-  // Inicializar el nuevo nodo
-  nuevoNodo->numero = arr[i];
-  nuevoNodo->siguiente = NULL;
-
-  // Enlazar el nuevo nodo al final de la lista
-  if (head == NULL) 
-  {
-    head = nuevoNodo;
-    tail = nuevoNodo;
-  } else 
-  {
-    tail->siguiente = nuevoNodo;
-    tail = nuevoNodo;
-  }
-  return head;
 }
 
 
